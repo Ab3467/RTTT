@@ -5,7 +5,7 @@ const Borad = [
     [null,null,null],
     [null,null,null]
 ]
-export default function GameBoard() {
+export default function GameBoard(onSelectSquare) {
 const [gameBoard,setgameBoard]= useState(Borad) 
 const BtnControl=(rowIndex,colIndex)=>{
     setgameBoard((prevGameBoard)=>{
@@ -13,6 +13,7 @@ const BtnControl=(rowIndex,colIndex)=>{
         updatedboard[rowIndex][colIndex]= 'O';
         return updatedboard;
      })
+     onSelectSquare();
 }
 
   return (
