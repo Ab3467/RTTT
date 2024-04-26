@@ -5,19 +5,19 @@ const Borad = [
     [null,null,null],
     [null,null,null]
 ]
-export default function GameBoard(onSelectSquare) {
+export default function GameBoard({onSelectSquare,ActivePlySymbol}) {
 const [gameBoard,setgameBoard]= useState(Borad) 
 const BtnControl=(rowIndex,colIndex)=>{
     setgameBoard((prevGameBoard)=>{
         const updatedboard= [...prevGameBoard.map(innerArray=>[...innerArray])];
-        updatedboard[rowIndex][colIndex]= 'O';
+        updatedboard[rowIndex][colIndex]= ActivePlySymbol;
         return updatedboard;
      })
      onSelectSquare();
 }
 
   return (
-    <ol id='game-board' className='highlight-player'>
+    <ol id='game-board'>
       {gameBoard.map((row,rowIndex)=> <li key={rowIndex}>
 
       <ol>

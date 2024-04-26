@@ -1,32 +1,41 @@
- import React,{useState} from 'react'
+import React, { useState } from 'react';
 
 export default function Player(props) {
-const [name,setname] = useState(props.playerName);
-const [editbtn,seteditbtn]=useState(false)
+  const [name, setName] = useState(props.playerName);
+  const [editBtn, setEditBtn] = useState(false);
 
-const EditBtn= ()=>{
-    seteditbtn((editing)=> !editing)
-}
-const handleChange=(event)=>{
-    setname(event.target.value)
-}
+  const editBtnHandler = () => {
+    setEditBtn(editing => !editing);
+  };
 
-let Playername;
-if(!editbtn){
-     Playername= <span className="player-name">{name} </span>
-}
-else{
-   Playername = <input placeholder="Player Name" type='text' required value={name} onChange={handleChange}/> 
-}
-    return (
-    <li>
-        <span className="player">
-        {Playername}
+  const handleChange = event => {
+    setName(event.target.value);
+  };
+
+  let playerName;
+  if (!editBtn) {
+    playerName = <span className="player-name">{name}</span>;
+  } else {
+    playerName = (
+      <input
+        placeholder="Player Name"
+        type="text"
+        required
+        value={name}
+        onChange={handleChange}
+      />
+    );
+  }
+
+  return (
+    <li className={props.isActive ? 'active' : undefined}>
+      <span className="player">
+        {playerName}
         <span className="player-symbol">{props.symbol}</span>
-        </span>
-        <span><button onClick={EditBtn}>{editbtn ? "save": "edit"}</button></span>
+      </span>
+      <span>
+        <button onClick={editBtnHandler}>{editBtn ? 'Save' : 'Edit'}</button>
+      </span>
     </li>
-    
-    
-    )
+  );
 }
