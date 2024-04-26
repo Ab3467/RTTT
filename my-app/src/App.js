@@ -11,7 +11,7 @@ function App() {
        <Player playerName="Player 1" symbol="X"/>
        <Player playerName="Player 2" symbol="O"/>
       </ol>
-     <GameBoard/>
+     <GameBoard />
      </div>
    </main>
    </>
