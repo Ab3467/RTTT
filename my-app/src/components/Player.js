@@ -12,7 +12,7 @@ if(!editbtn){
      Playername= <span className="player-name">{props.player} </span>
 }
 else{
-   Playername = <input type='text' required/>
+   Playername = <input type='text' required/> 
 }
     return (
     <li>
@@ -20,7 +20,7 @@ else{
         {Playername}
         <span className="player-symbol">{props.symbol}</span>
         </span>
-        <span><button onClick={EditBtn}>Edit</button></span>
+        <span><button onClick={EditBtn}>{editbtn ? "save": "Edit"}</button></span>
     </li>
     
     
