@@ -51,8 +51,8 @@ h1 {
   padding: 2rem;
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  position: relative;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+ 
 }
 
 #players {
