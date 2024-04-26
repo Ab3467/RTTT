@@ -21,7 +21,7 @@ body {
   background: radial-gradient(circle at top,
       rgba(241, 210, 70, 0.98),
       rgba(250, 176, 103, 0.87)),
-    url('./Assets/bg-pattern-dark.png');
+    url('../src/Assets/bg-pattern-dark.png');
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 110rem;
@@ -51,8 +51,8 @@ h1 {
   padding: 2rem;
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
- 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 #players {
