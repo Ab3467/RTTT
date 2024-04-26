@@ -6,20 +6,22 @@ const Borad = [
     [null,null,null]
 ]
 export default function GameBoard() {
-const [symbol,setSymbol]= useState('X') 
-const BtnControl=()=>{
-    setSymbol(symbol ? 'O': 'X');
+const [gameBoard,setgameBoard]= useState(Borad) 
+const BtnControl=(rowIndex,colIndex)=>{
+    setgameBoard((prevGameBoard)=>{
+
+    })
 }
 
   return (
     <ol id='game-board'>
-      {Borad.map((row,rowIndex)=> <li key={rowIndex}>
+      {gameBoard.map((row,rowIndex)=> <li key={rowIndex}>
 
       <ol>
         {row.map((plySymbol,colIndex)=>
         <li key={colIndex}>
-            <button onClick={BtnControl}>
-            {symbol}
+            <button onClick={()=>BtnControl(rowIndex,colIndex)}>
+            {plySymbol}
             </button>
         </li>
         )}
