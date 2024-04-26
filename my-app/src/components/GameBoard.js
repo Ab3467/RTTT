@@ -13,16 +13,16 @@ export default function GameBoard() {
       {Borad.map((row,rowIndex)=> <li key={rowIndex}>
 
       <ol>
-        <li>
+        {row.map((plySymbol,colIndex)=>
+        <li key={colIndex}>
             <button>
-                
+            {plySymbol}
             </button>
         </li>
+        )}
       </ol>
 
-      </li>
-         
-      )}
+      </li>)}
     </ol>
   )
 }
