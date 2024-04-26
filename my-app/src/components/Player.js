@@ -1,18 +1,18 @@
  import React,{useState} from 'react'
 
 export default function Player(props) {
+const [name,setname] = useState(playerName);
 const [editbtn,seteditbtn]=useState(false)
 
 const EditBtn= ()=>{
     seteditbtn((editing)=> !editing)
 }
-
 let Playername;
 if(!editbtn){
-     Playername= <span className="player-name">{props.player} </span>
+     Playername= <span className="player-name">{props.playerName} </span>
 }
 else{
-   Playername = <input placeholder="Player Name" type='text' required /> 
+   Playername = <input placeholder="Player Name" type='text' required value={props.playerName} onChange={handleChange}/> 
 }
     return (
     <li>
