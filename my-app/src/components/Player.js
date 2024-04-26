@@ -4,7 +4,7 @@ export default function Player(props) {
 const [editbtn,seteditbtn]=useState(false)
 
 const EditBtn= ()=>{
-    seteditbtn(!editbtn)
+    seteditbtn((editing)=> !editing)
 }
 
 let Playername;
