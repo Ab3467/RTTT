@@ -1,11 +1,9 @@
-import React,{useState} from 'react'
-
 const Borad = [
     [null,null,null],
     [null,null,null],
     [null,null,null]
 ]
-export default function GameBoard({onSelectSquare}) {
+export default function GameBoard({onSelectSquare,turns}) {
 const [gameBoard,setgameBoard]= useState(Borad) 
 const BtnControl=(rowIndex,colIndex)=>{
     setgameBoard((prevGameBoard)=>{
