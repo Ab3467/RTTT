@@ -1,18 +1,22 @@
-const Borad = [
+const Board = [
     [null,null,null],
     [null,null,null],
     [null,null,null]
 ]
 export default function GameBoard({onSelectSquare,turns}) {
-const [gameBoard,setgameBoard]= useState(Borad) 
-const BtnControl=(rowIndex,colIndex)=>{
-    setgameBoard((prevGameBoard)=>{
-        const updatedboard= [...prevGameBoard.map(innerArray=>[...innerArray])];
-        updatedboard[rowIndex][colIndex]= ActivePlySymbol;
-        return updatedboard;
-     })
-     onSelectSquare();
-}
+
+
+  let gameBoard = Board;
+
+// const [gameBoard,setgameBoard]= useState(Borad) 
+// const BtnControl=(rowIndex,colIndex)=>{
+//     setgameBoard((prevGameBoard)=>{
+//         const updatedboard= [...prevGameBoard.map(innerArray=>[...innerArray])];
+//         updatedboard[rowIndex][colIndex]= ActivePlySymbol;
+//         return updatedboard;
+//      })
+//      onSelectSquare();
+// }
 
   return (
     <ol id='game-board'>
