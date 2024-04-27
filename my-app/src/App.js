@@ -17,7 +17,7 @@ function App() {
 
    const ActivePlayer = deriveActiveTurns(gameturn)
    
-  // const [ActivePlayer,setActive]=useState();
+
   const handleSelectSquare=(rowIndex,colIndex)=>{
     //  setActive((currActive)=> currActive==='X'?'O':'X')
      setgameturn((prevTurns)=>{
