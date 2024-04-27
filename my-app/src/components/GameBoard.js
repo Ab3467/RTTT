@@ -5,7 +5,7 @@ const Borad = [
     [null,null,null],
     [null,null,null]
 ]
-export default function GameBoard({onSelectSquare,ActivePlySymbol}) {
+export default function GameBoard({onSelectSquare}) {
 const [gameBoard,setgameBoard]= useState(Borad) 
 const BtnControl=(rowIndex,colIndex)=>{
     setgameBoard((prevGameBoard)=>{
@@ -23,7 +23,7 @@ const BtnControl=(rowIndex,colIndex)=>{
       <ol>
         {row.map((plySymbol,colIndex)=>
         <li key={colIndex}>
-            <button onClick={()=>BtnControl(rowIndex,colIndex)}>
+            <button onClick={onSelectSquare}>
             {plySymbol}
             </button>
         </li>

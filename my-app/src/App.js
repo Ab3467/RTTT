@@ -2,10 +2,19 @@ import { useState } from "react"
 import GameBoard from "./components/GameBoard"
 import Player from "./components/Player"
 function App() {
-
+   const [gameturn,setgameturn]= useState([]);
   const [ActivePlayer,setActive]=useState();
-  const handleSelectSquare=()=>{
+  const handleSelectSquare=(rowIndex,colIndex)=>{
      setActive((currActive)=> currActive==='X'?'O':'X')
+     setgameturn((prevTurns)=>{
+
+      let currPlayer = 'X';
+      if(prevTurns.length > 0 &&  prevTurns[0].Player==='X'){
+        currPlayer='O';
+      }
+      const updatedTurns = [{square:{row: rowIndex,col:colIndex},Player:currPlayer  },...prevTurns];
+      return updatedTurns
+     });
   }
   
 
