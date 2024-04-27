@@ -22,16 +22,22 @@ function App() {
   
    const ActivePlayer = deriveActiveTurns(gameturn)
    let gameBoard = Board;
-  for(let turn of turns){
+  for(let turn of gameturn){
     const { square, Player} = turn;
     const {row,col}= square; 
 
     gameBoard[row][col]=Player;
   }
+
+  let winner;
    for(const combination of WINNING_COMBINATION){
-    const forstBlockSymbol
-    const SecondBlockSymbol
-    const ThirdBlockSymbol
+    const firstBlockSymbol = gameBoard[combination[0].row][combination[0].col];
+    const SecondBlockSymbol = gameBoard[combination[1].row][combination[1].col];
+    const ThirdBlockSymbol = gameBoard[combination[2].row][combination[2].col];
+
+    if(firstBlockSymbol && firstBlockSymbol === SecondBlockSymbol && firstBlockSymbol === ThirdBlockSymbol){
+      winner = firstBlockSymbol;
+    }
    }
 
   const handleSelectSquare=(rowIndex,colIndex)=>{
@@ -41,7 +47,7 @@ function App() {
      currPlayer='O';
    }
       const updatedTurns = [{square:{row: rowIndex,col:colIndex},Player:currPlayer  },...prevTurns];
-      return updatedTurns
+      return updatedTurns;
      });
   }
   
@@ -54,8 +60,10 @@ function App() {
        <Player playerName="Player 1" symbol="X" isActive={ActivePlayer==='X'}/>
        <Player playerName="Player 2" symbol="O" isActive={ActivePlayer==='O'}/>
       </ol>
+
+       {winner && <p>Player {winner} won !</p>}
      <GameBoard onSelectSquare={handleSelectSquare} 
-     board={gameBoard}/>
+     board={gameBoard }/>
      </div>
      <Log turns={gameturn}/>
    </main>
