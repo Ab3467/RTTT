@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React,{useState} from "react";
 
-export default function Player(props, onChangeName) {
-  const [name, setName] = useState(props.playerName);
+function Player({ initialName, isActive, onChangeName, symbol }) {
+  const [name, setName] = useState(initialName);
   const [editBtn, setEditBtn] = useState(false);
 
   const editBtnHandler = () => {
     setEditBtn(editing => !editing);
+    onChangeName(symbol, name);
   };
 
   const handleChange = event => {
@@ -28,10 +29,10 @@ export default function Player(props, onChangeName) {
   }
 
   return (
-    <li className={props.isActive ? 'active' : undefined}>
+    <li className={isActive ? 'active' : undefined}>
       <span className="player">
         {playerName}
-        <span className="player-symbol">{props.symbol}</span>
+        <span className="player-symbol">{symbol}</span>
       </span>
       <span>
         <button onClick={editBtnHandler}>{editBtn ? 'Save' : 'Edit'}</button>
@@ -39,3 +40,4 @@ export default function Player(props, onChangeName) {
     </li>
   );
 }
+export default Player;

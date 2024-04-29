@@ -24,10 +24,7 @@ function App() {
     'X': 'Player 1',
     'O': 'player 2'
    })
-  
-   const handleChangeName = ()=>{
 
-   }
    const ActivePlayer = deriveActiveTurns(gameturn)
    let gameBoard = [...Board.map(array=> [...array])];
   for(let turn of gameturn){
@@ -44,11 +41,11 @@ function App() {
     const ThirdBlockSymbol = gameBoard[combination[2].row][combination[2].col];
 
     if(firstBlockSymbol && firstBlockSymbol === SecondBlockSymbol && firstBlockSymbol === ThirdBlockSymbol){
-      winner = firstBlockSymbol;
+      winner = players[firstBlockSymbol];
     }
    }
 
-  const gameDraw  = gameturn === 9 && !winner;
+  const gameDraw  = gameturn.length === 9 && !winner;
   const handleSelectSquare=(rowIndex,colIndex)=>{
    setgameturn((prevTurns)=>{
       let currPlayer = 'X';
@@ -62,13 +59,24 @@ function App() {
   function handleStart(){
     setgameturn([]);
   }
+  const handleChangeName=(symbol,newName)=>{
+     setPlayers((prevPlayers)=>{
+        return{
+          ...prevPlayers,
+          [symbol]: newName
+        }
+       })
+      }
   return (
    <>
    <main>
      <div id="game-container">
       <ol id="players" className='highlight-player'>
-       <Player playerName="Player 1" symbol="X" isActive={ActivePlayer==='X'} onChangeName={handleChangeName}/>
-       <Player playerName="Player 2" symbol="O" isActive={ActivePlayer==='O'} onChangeName={handleChangeName}/>
+      <Player initialName={players['X']} symbol="X" isActive={ActivePlayer==='X'} onChangeName={handleChangeName}/>
+     <Player initialName={players['O']} symbol="O" isActive={ActivePlayer==='O'} onChangeName={handleChangeName}/>
+
+
+ 
       </ol>
 
        {(winner || gameDraw) && <Gamedraw winner={winner} onRestart={handleStart}/>}
