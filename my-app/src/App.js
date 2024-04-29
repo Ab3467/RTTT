@@ -20,7 +20,14 @@ function deriveActiveTurns (gameturn){
 }
 function App() {
    const [gameturn,setgameturn]= useState([]);
+   const [players,setPlayers]= useState({
+    'X': 'Player 1',
+    'O': 'player 2'
+   })
   
+   const handleChangeName = ()=>{
+
+   }
    const ActivePlayer = deriveActiveTurns(gameturn)
    let gameBoard = [...Board.map(array=> [...array])];
   for(let turn of gameturn){
@@ -60,8 +67,8 @@ function App() {
    <main>
      <div id="game-container">
       <ol id="players" className='highlight-player'>
-       <Player playerName="Player 1" symbol="X" isActive={ActivePlayer==='X'}/>
-       <Player playerName="Player 2" symbol="O" isActive={ActivePlayer==='O'}/>
+       <Player playerName="Player 1" symbol="X" isActive={ActivePlayer==='X'} onChangeName={handleChangeName}/>
+       <Player playerName="Player 2" symbol="O" isActive={ActivePlayer==='O'} onChangeName={handleChangeName}/>
       </ol>
 
        {(winner || gameDraw) && <Gamedraw winner={winner} onRestart={handleStart}/>}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Player(props) {
+export default function Player(props, onChangeName) {
   const [name, setName] = useState(props.playerName);
   const [editBtn, setEditBtn] = useState(false);
 
