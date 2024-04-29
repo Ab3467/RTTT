@@ -26,9 +26,8 @@ function Player({ initialName, isActive, onChangeName, symbol }) {
         onChange={handleChange}
       />
     );
-  }
-
-  return (
+  } 
+return (
     <li className={isActive ? 'active' : undefined}>
       <span className="player">
         {playerName}
