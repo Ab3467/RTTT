@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-
 function Player({ initialName, isActive, onChangeName, symbol }) {
   const [name, setName] = useState(initialName);
   const [editBtn, setEditBtn] = useState(false);
