@@ -19,7 +19,7 @@ function deriveActiveTurns(gameturn) {
   return currPlayer;
 }
 function App() {
-  const [gameturn,setgameturn] = useState([])
+  const [gameturn, setgameturn] = useState([]);
   const [players, setPlayers] = useState({
     X: "Player 1",
     O: "player 2",
