@@ -26,7 +26,7 @@ function App() {
    })
 
    const ActivePlayer = deriveActiveTurns(gameturn)
-   let gameBoard = [...Board.map(array=> [...array])];
+   let gameBoard = [...Board.map(array=> [...array])];    //updating object state immuntably
   for(let turn of gameturn){
     const { square, Player} = turn;
     const {row,col}= square; 
