@@ -49,5 +49,5 @@ export default Player;
 // Frontend developers focus on creating an engaging user interface (UI) and ensuring a smooth user experience (UX). They work on designing layouts, implementing features, and optimizing performance for various devices and browsers.
 // Backend:
 // The backend, also known as the server-side, is responsible for behind-the-scenes functionality that powers the frontend. It handles tasks such as data storage, retrieval, processing, and business logic.
-// Backend technologies often include programming languages like Python, Ruby, Java, PHP, and frameworks like Node.js, Django, Ruby on Rails, etc.
+// Backend technologies often include programming languages like Python, Ruby, Java, PHP, and frameworks like Node.js, Django,2787 Ruby on Rails, etc.
 // Backend developers focus on server-side logic, databases, APIs (Application Programming Interfaces), and integrations with other services. They ensure that data is securely stored, processed, and delivered to the frontend as needed.
